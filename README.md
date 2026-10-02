@@ -138,9 +138,19 @@ DB_PORT=5432
 
 ### 5. Create the database
 
-Create a PostgreSQL database using the credentials configured in `.env`.
+This project includes a Docker Compose file for running PostgreSQL locally
 
-For example:
+Start the PostgreSQL Container
+
+```
+docker compose up -d
+```
+Verify that the container is running:
+
+```
+docker compose ps
+```
+PostgreSQL will be available at:
 
 ```text
 Database: spotter
@@ -148,6 +158,14 @@ User: spotter
 Password: spotter_password
 Host: localhost
 Port: 5432
+```
+The database credentials are loaded from the .env file by Docker Compose.
+The PostgreSQL data is stored in a Docker named volume, so stopping the container does not remove the database data.
+
+To stop PostgreSQL
+
+```
+docker compose down
 ```
 
 ### 6. Run migrations
