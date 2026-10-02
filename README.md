@@ -27,7 +27,7 @@ The API:
 ## Project Structure
 
 ```text
-pithon/
+spotter-route-fuel-optimizer/
 ├── config/
 │   ├── settings.py
 │   ├── urls.py
